@@ -1,0 +1,6 @@
+{
+  "name": "Med Invent Devices — Pricing & Ordering Calculator",
+  "description": "Mobile-friendly customer pricing and WhatsApp ordering calculator with admin inventory tracking, site content management, reporting dashboard, and PHP/MySQL deployment package for Med Invent Devices Pvt Ltd.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

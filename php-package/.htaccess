@@ -1,0 +1,24 @@
+# Med Invent Devices - Shared Hosting Apache Security Rules
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Block direct HTTP access to internal folders
+  RewriteRule ^(config|database|includes)/ - [F,L]
+</IfModule>
+
+<FilesMatch "\.(sql|md|log|env|json)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
